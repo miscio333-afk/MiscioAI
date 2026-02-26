@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
         'X-Title': 'Chat AI',
       },
       body: JSON.stringify({
-        model: 'z-ai/glm-4.5-air:free',
+        model: 'arcee-ai/trinity-large-preview:free',
         messages,
         stream: true,
         plugins: [{ id: 'web' }],
