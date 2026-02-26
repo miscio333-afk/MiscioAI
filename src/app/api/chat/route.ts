@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
         'X-Title': 'Chat AI',
       },
       body: JSON.stringify({
-        model: 'openrouter/free',
+        model: 'qwen/qwen3.5-35b-a2b:free',
         messages,
         stream: true,
         plugins: [{ id: 'web' }],
