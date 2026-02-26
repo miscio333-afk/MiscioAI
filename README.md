@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Miscio - Chat AI per Studenti
 
-## Getting Started
+Un assistente AI chat progettato per aiutare gli studenti con francese, matematica, informatica, tecnologia e coding.
 
-First, run the development server:
+## Caratteristiche
 
+- 💬 **Chat in tempo reale** con streaming delle risposte
+- 🇫🇷 **Francese bilingue** - risposte in francese + italiano
+- 🧮 **Metodo socratico** - guida lo studente a ragionare prima di dare la soluzione
+- 🌐 **Ricerca web** - informazioni aggiornate da internet
+- 📝 **Markdown support** - grassetto, corsivo, codice, liste, link
+- 📋 **Copia risposte** - pulsante per copiare le risposte
+- 🎨 **Dark neon theme** - design moderno minimal
+
+## Prerequisiti
+
+- Node.js 18+
+- API key OpenRouter (gratuita)
+
+## Setup
+
+1. **Clona il progetto:**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/TUO_USERNAME/miscio-chat.git
+cd miscio-chat
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Installa le dipendenze:**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Configura la API key:**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Crea un file `.env.local` nella root del progetto:
+```env
+OPENROUTER_API_KEY=la_tua_api_key
+```
 
-## Learn More
+Ottieni la API key gratuita da: https://openrouter.ai/keys
 
-To learn more about Next.js, take a look at the following resources:
+4. **Avvia il server:**
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. **Apri nel browser:**
+```
+http://localhost:3000
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Personalizzazione
 
-## Deploy on Vercel
+### Modifica la personalità di Miscio
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Edita il file `src/components/ChatContainer.tsx` e modifica la costante `SYSTEM_MESSAGE` per cambiare:
+- Nome e descrizione
+- Materie di competenza
+- Regole di risposta
+- Tono e stile
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Aggiungi bottoni suggerimento
+
+Modifica l'array `SUGGESTION_BUTTONS` in `src/components/ChatContainer.tsx`.
+
+## Tech Stack
+
+- **Frontend:** Next.js 14, React, TypeScript
+- **Styling:** Tailwind CSS
+- **AI:** OpenRouter API (modelli gratuiti)
+- **Markdown:** react-markdown
+
+## Deployment
+
+### Vercel (consigliato)
+
+```bash
+npm i -g vercel
+vercel
+```
+
+### Netlify
+
+```bash
+npm run build
+# Deploy la cartella .next
+```
+
+## Note
+
+- Il modello gratuito potrebbe avere rate limits
+- Le conversazioni non sono salvate permanentemente
+- Per salvare le chat, considera l'aggiunta di localStorage o un database
+
+## Licenza
+
+MIT
