@@ -4,32 +4,30 @@ export async function POST(req: NextRequest) {
   try {
     const { messages } = await req.json();
 
-    if (!process.env.OPENROUTER_API_KEY) {
+    if (!process.env.GROQ_API_KEY) {
       return Response.json(
         { error: 'API key not configured' },
         { status: 500 }
       );
     }
 
-    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
+        'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
         'Content-Type': 'application/json',
-        'X-Title': 'Chat AI',
       },
       body: JSON.stringify({
-        model: 'arcee-ai/trinity-large-preview:free',
+        model: 'llama-3.3-70b-versatile',
         messages,
         stream: true,
-        plugins: [{ id: 'web' }],
       }),
     });
 
     if (!response.ok) {
       const error = await response.text();
       return Response.json(
-        { error: `OpenRouter error: ${error}` },
+        { error: `Groq error: ${error}` },
         { status: response.status }
       );
     }

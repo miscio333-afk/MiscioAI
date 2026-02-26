@@ -7,7 +7,6 @@ Un assistente AI chat progettato per aiutare gli studenti con francese, matemati
 - 💬 **Chat in tempo reale** con streaming delle risposte
 - 🇫🇷 **Francese bilingue** - risposte in francese + italiano
 - 🧮 **Metodo socratico** - guida lo studente a ragionare prima di dare la soluzione
-- 🌐 **Ricerca web** - informazioni aggiornate da internet
 - 📝 **Markdown support** - grassetto, corsivo, codice, liste, link
 - 📋 **Copia risposte** - pulsante per copiare le risposte
 - 🎨 **Dark neon theme** - design moderno minimal
@@ -15,7 +14,7 @@ Un assistente AI chat progettato per aiutare gli studenti con francese, matemati
 ## Prerequisiti
 
 - Node.js 18+
-- API key OpenRouter (gratuita)
+- API key Groq (gratuita)
 
 ## Setup
 
@@ -34,10 +33,10 @@ npm install
 
 Crea un file `.env.local` nella root del progetto:
 ```env
-OPENROUTER_API_KEY=la_tua_api_key
+GROQ_API_KEY=la_tua_api_key
 ```
 
-Ottieni la API key gratuita da: https://openrouter.ai/keys
+Ottieni la API key gratuita da: https://console.groq.com/
 
 4. **Avvia il server:**
 ```bash
@@ -67,7 +66,7 @@ Modifica l'array `SUGGESTION_BUTTONS` in `src/components/ChatContainer.tsx`.
 
 - **Frontend:** Next.js 14, React, TypeScript
 - **Styling:** Tailwind CSS
-- **AI:** OpenRouter API (modelli gratuiti)
+- **AI:** Groq API (Llama 3.3)
 - **Markdown:** react-markdown
 
 ## Deployment
